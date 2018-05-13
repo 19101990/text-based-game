@@ -13,7 +13,9 @@ class Player():
 
 def prompt_for_name():
     os.system("cls")
-    print("Welcome to Hazardville Police Department. Please fill this form with your personal data and experience to be considered for the position of Hazardville sheriff.")
+    print("""Welcome to Hazardville Police Department. Please fill this form
+with your personal data and experience to be considered for the
+position of Hazardville sheriff.""")
     time.sleep(1)
     print("\n")
     name_option = input("NAME: ")
@@ -29,7 +31,10 @@ def prompt_for_name():
     player = Player(name_option, surname_option, sex_option, age_option)
     time.sleep(1)
     print("\n")
-    print("We were really impressed with your resume {} {}.".format(player.sex.title(), player.surname.title()) + " We decided we would like to offer you a position of Hazadrville's Sheriff. Do you accept the offer?")
+    print("We were really impressed with your resume {} {}.".format(player.sex.title(),
+                                                                    player.surname.title()))
+    print("""\nWe decided we would like to offer you a position of Hazadrville's
+Sheriff. Do you accept the offer?""")
     time.sleep(1)
     start()
 
@@ -55,7 +60,14 @@ def intro():
     os.system("cls")
     print("[SUNDAY, 1st of July, 07:21:30]\n")
     time.sleep(3)
-    time.sleep(6)
+    print("""You look through the window in you kitchen taking a sip of your
+favourite tea. It's a lovely morning. And Hazardville is a lovely
+town. Not even once during those two years you regretted your decision
+about moving out from Seattle. Why would you? Nothing ever happened
+here and you're a lazy """, end='')
+    print('bastard' if player.sex == "Mr." else 'bitch', end='')
+    print(""" with absolutely no ambition to be a
+good cop.""")
 
 
 prompt_for_name()
