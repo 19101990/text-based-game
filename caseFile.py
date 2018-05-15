@@ -2,6 +2,8 @@ import sys
 import os
 import time
 
+t = 1
+
 class Player():
     def __init__(self, name, surname, sex, age, position="StartRoom"):
         self.name = name
@@ -16,7 +18,7 @@ def prompt_for_name():
     print("""Welcome to Hazardville Police Department. Please fill this form
 with your personal data and experience to be considered for the
 position of Hazardville sheriff.""")
-    time.sleep(1)
+    time.sleep(t)
     print("\n")
     name_option = input("NAME: ")
     surname_option = input("SURNAME: ")
@@ -28,7 +30,7 @@ position of Hazardville sheriff.""")
     age_option = input("AGE: ")
     global player
     player = Player(name_option, surname_option, sex_option, age_option)
-    time.sleep(1)
+    time.sleep(t)
     print("\n")
     print("We were really impressed with your resume {} {}.\n".format(player.sex.title(),
                                                                     player.surname.title()))
@@ -44,7 +46,7 @@ def start():
         print("Great! See you on Monday, Inspector!")
         take_action()
         os.system("cls")
-        time.sleep(2)
+        time.sleep(t)
         intro()
     elif option.lower() == "n":
         sys.exit()
@@ -71,7 +73,7 @@ good cop.""")
 you think. You take just one more sip and answer the phone.""")
     take_action()
     print("\t- {}.".format(player.surname.title()))
-    time.sleep(2)
+    time.sleep(t)
     print("\t- Sir, " if player.sex == "Mr." else "\t- Ma'am,", " there's been a murder...\n")
     take_action()
 
