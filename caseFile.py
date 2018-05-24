@@ -20,13 +20,26 @@ with your personal data and experience to be considered for the
 position of Hazardville sheriff.""")
     time.sleep(t)
     print("\n")
+    global name_option
     name_option = input("NAME: ")
+    prompt_for_surname()
+
+def prompt_for_surname():
+    global surname_option
     surname_option = input("SURNAME: ")
+    prompt_for_sex()
+
+def prompt_for_sex():
+    global sex_option
     sex_option = input("SEX: ")
     if sex_option.lower() in ("m", "male", "man", "dude", "guy"):
         sex_option = "Mr."
     elif sex_option.lower() in ("f", "female", "woman", "girl", "chick"):
         sex_option = "Ms."
+    prompt_for_age()
+
+def prompt_for_age():
+    global age_option
     age_option = input("AGE: ")
     global player
     player = Player(name_option, surname_option, sex_option, age_option)
@@ -71,10 +84,15 @@ good cop.""")
     take_action()
     print("""Suddenly you hear your phone ringing. \"Well, that's unusual\",
 you think. You take just one more sip and answer the phone.""")
-    take_action()
+    time.sleep(t)
     print("\t- {}.".format(player.surname.title()))
     time.sleep(t)
     print("\t- Sir, " if player.sex == "Mr." else "\t- Ma'am,", " there's been a murder...\n")
+    take_action()
+    murder_scene()
+
+def murder_scene():
+    print("[Sunday, 1st of July, 7:40:45]\n")
     take_action()
 
 
